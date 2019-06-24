@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+  namespace: my-namespace
+spec:
+  selector:
+      name: nginx-pod 
+  type: NodePort
+  ports:
+  - protocol: TCP
+    port: 80
+    nodePort: 30080
